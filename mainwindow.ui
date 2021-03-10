@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1249</width>
+    <height>818</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>矿井工况查询</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTableWidget" name="platformTableWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>OpenHandCursor</cursorShape>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::ActionsContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="textElideMode">
+       <enum>Qt::ElideLeft</enum>
+      </property>
+      <property name="gridStyle">
+       <enum>Qt::SolidLine</enum>
+      </property>
+      <property name="sortingEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <attribute name="horizontalHeaderVisible">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>50</number>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>100</number>
+      </attribute>
+      <attribute name="horizontalHeaderHighlightSections">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
+      <row>
+       <property name="text">
+        <string/>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string/>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>井名</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>层名</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>压力1</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>压力2</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>设定流量</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>实时流量</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>温度</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>开度</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>高压</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>高压电流</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>故障状态</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>通信成功率</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1249</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>配置</string>
+    </property>
+    <addaction name="muSerialConf"/>
+    <addaction name="separator"/>
+    <addaction name="muImportConf"/>
+    <addaction name="muExportConf"/>
+    <addaction name="actionPlatformConf"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>实时曲线</string>
+    </property>
+    <addaction name="actionOpenRealtimePlot"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>历史曲线</string>
+    </property>
+    <addaction name="actionOpenHistoryPlot"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>诊断信息</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_6">
+    <property name="title">
+     <string>定时监控</string>
+    </property>
+    <addaction name="workStatus"/>
+    <addaction name="wellCtrlBox"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_6"/>
+   <addaction name="menu_5"/>
+  </widget>
+  <action name="muSerialConf">
+   <property name="text">
+    <string>串口配置</string>
+   </property>
+  </action>
+  <action name="muImportConf">
+   <property name="text">
+    <string>导入配置</string>
+   </property>
+  </action>
+  <action name="muExportConf">
+   <property name="text">
+    <string>导出配置</string>
+   </property>
+  </action>
+  <action name="workStatus">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>工况查询</string>
+   </property>
+  </action>
+  <action name="wellCtrlBox">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>井口控制箱</string>
+   </property>
+  </action>
+  <action name="actionPlatformConf">
+   <property name="text">
+    <string>平台配置</string>
+   </property>
+  </action>
+  <action name="actionOpenRealtimePlot">
+   <property name="text">
+    <string>打开实时曲线图</string>
+   </property>
+  </action>
+  <action name="actionOpenHistoryPlot">
+   <property name="text">
+    <string>打开历史曲线图</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
